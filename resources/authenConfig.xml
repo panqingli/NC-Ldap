@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding='gb2312'?>
+<!--
+<authenConfig>
+	<defaultMode>系统默认的认证方式的编码</defaultMode> 
+	<authenModes>
+		<authenMode code="认证方式的编码，不可空" name="认证方式的名称" enable="是否启用">
+			<verifyClsName>认证方式的后台校验类，不可空</verifyClsName>
+			<clientHandlerClsName>前台客户端的预处理类，可空</clientHandlerClsName>
+			<resultMsgHandlerClsName>认证结果的翻译为字符串的处理类，可空</resultMsgHandlerClsName>
+			<clientRunnableClsName>客户端runnable类，可空</clientRunnableClsName>
+			<param key="参数1" value="值1"/>
+			<param key="key2" value="value2"/>
+			......参数可以配置多个
+		</authenMode>
+	</authenModes>
+</authenConfig>
+-->
+<authenConfig>
+	<defaultMode>staticpwd</defaultMode> 
+	<authenModes>
+		<authenMode code="staticpwd" name="static password authenticator" enable="true">
+			<verifyClsName>nc.identityverify.pub.StaticPWDVerifier</verifyClsName>
+			<clientHandlerClsName></clientHandlerClsName>
+			<resultMsgHandlerClsName></resultMsgHandlerClsName>
+			<clientRunnableClsName></clientRunnableClsName>
+			<afterVerifySuccessServerClsName>nc.identityverify.pub.StaticPWDVerifySuccessServer</afterVerifySuccessServerClsName>
+			<afterVerifySuccessClientClsName>nc.login.identify.ui.StaticPWDVerifySuccessClient</afterVerifySuccessClientClsName>
+		</authenMode>
+		<authenMode code="ncca" name="CA Authenticator" enable="true">
+			<verifyClsName>nc.login.identify.ca.bs.CAIdentityVerifier</verifyClsName>
+			<clientHandlerClsName>nc.login.identify.ca.ui.CAClientHandler</clientHandlerClsName>
+			<resultMsgHandlerClsName>nc.login.identify.ca.ui.CAResultMessageHandler</resultMsgHandlerClsName>
+			<clientRunnableClsName>nc.login.identify.ca.ui.CAClientRunnableThread</clientRunnableClsName>
+			<afterVerifySuccessServerClsName>nc.identityverify.pub.StaticPWDVerifySuccessServer</afterVerifySuccessServerClsName>
+			<afterVerifySuccessClientClsName>nc.login.identify.ui.StaticPWDVerifySuccessClient</afterVerifySuccessClientClsName>
+		</authenMode>
+		<authenMode code="ncldap" name="LDAP Authenticator" enable="true">
+			<verifyClsName>nc.login.identify.ldap.bs.LDAPIdentityVerifier</verifyClsName>
+			<clientHandlerClsName></clientHandlerClsName>
+			<resultMsgHandlerClsName></resultMsgHandlerClsName>
+			<clientRunnableClsName></clientRunnableClsName>
+			<afterVerifySuccessServerClsName>nc.identityverify.pub.StaticPWDVerifySuccessServer</afterVerifySuccessServerClsName>
+			<afterVerifySuccessClientClsName>nc.login.identify.ui.StaticPWDVerifySuccessClient</afterVerifySuccessClientClsName>
+		</authenMode>
+	</authenModes>
+</authenConfig>
